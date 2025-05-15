@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const userMenuDropdown = document.querySelector('.user-menu .dropdown-content');
-    // Simulate logged-in state
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
     // Simulate user data and repair jobs (in a real app, fetch this)
     const simulatedUser = {
         username: 'RepairPro',
@@ -22,32 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateMenu() {
         userMenuDropdown.innerHTML = ''; // Clear current content
-        if (isLoggedIn) {
-            userMenuDropdown.innerHTML = `
-                <a href="/FiXerUppers/profile.html">Profile</a>
-                <a href="/FiXerUppers/current-repair-jobs.html">Current Repair Jobs</a>
-                <a href="/FiXerUppers/appointment.html">Make an Appointment</a>
-                <a href="#" id="logout-link">Logout</a>
-            `;
-            document.getElementById('logout-link').addEventListener('click', handleLogout);
-        } else {
-            userMenuDropdown.innerHTML = `
-                <a href="/FiXerUppers/login.html">Login</a>
-                <a href="#" class="disabled-link">Profile</a>
-                <a href="#" class="disabled-link">Current Repair Jobs</a>
-                <a href="/FiXerUppers/appointment.html">Make an Appointment</a>
-            `;
-            userMenuDropdown.querySelectorAll('.disabled-link').forEach(link => {
-                 link.style.opacity = '0.5';
-                 link.style.pointerEvents = 'none';
-            });
-        }
+        // Always show logged-in menu items
+        userMenuDropdown.innerHTML = `
+            <a href="/FiXerUppers/profile.html">Profile</a>
+            <a href="/FiXerUppers/current-repair-jobs.html">Current Repair Jobs</a>
+            <a href="/FiXerUppers/appointment.html">Make an Appointment</a>
+            <a href="#" id="logout-link">Logout</a>
+        `;
+        document.getElementById('logout-link').addEventListener('click', handleLogout);
     }
 
     function handleLogout(event) {
         event.preventDefault();
+        // Keep the logout action as a simulation, though it won't prevent access now
         localStorage.removeItem('isLoggedIn');
-        window.location.href = '/';
+        alert("Simulated Logout - Access to user pages is still available for demonstration purposes.");
+        // Optionally redirect, or just stay on the page
+        // window.location.href = '/';
     }
 
     // Function to render profile content
@@ -62,31 +50,25 @@ document.addEventListener('DOMContentLoaded', () => {
             return; // Exit if elements don't exist (e.g., not on profile page)
         }
 
-        if (isLoggedIn) {
-            // Display user info
-            usernameElement.textContent = `@${simulatedUser.username}`;
-            avatarElement.src = `https://images.websim.com/avatar/${simulatedUser.username}`;
-            avatarElement.alt = `${simulatedUser.username}'s Avatar`;
+        // Always display user info using the simulated user
+        usernameElement.textContent = `@${simulatedUser.username}`;
+        avatarElement.src = `https://images.websim.com/avatar/${simulatedUser.username}`;
+        avatarElement.alt = `${simulatedUser.username}'s Avatar`;
 
-            // Display repair jobs (on profile page, maybe only show pending or a summary)
-             const pendingJobs = simulatedRepairJobs.filter(job => job.status !== 'Completed');
-             jobsHeadingElement.textContent = 'Your Repair Jobs (Pending):'; // Changed heading slightly
+        // Display repair jobs (on profile page, maybe only show pending or a summary)
+        const pendingJobs = simulatedRepairJobs.filter(job => job.status !== 'Completed');
+        jobsHeadingElement.textContent = 'Your Repair Jobs (Pending):'; // Changed heading slightly
 
-            if (pendingJobs.length > 0) {
-                jobsListElement.innerHTML = pendingJobs.map(job => `
-                    <div class="repair-job-item">
-                        <p>Item: <strong>${job.item}</strong></p>
-                        <p>Status: ${job.status}</p>
-                        <p>Estimated Completion/Pickup: ${job.estimated}</p>
-                    </div>
-                `).join('');
-            } else {
-                jobsListElement.innerHTML = '<p>You have no pending repair jobs at this time.</p>';
-            }
-
+        if (pendingJobs.length > 0) {
+            jobsListElement.innerHTML = pendingJobs.map(job => `
+                <div class="repair-job-item">
+                    <p>Item: <strong>${job.item}</strong></p>
+                    <p>Status: ${job.status}</p>
+                    <p>Estimated Completion/Pickup: ${job.estimated}</p>
+                </div>
+            `).join('');
         } else {
-            // If somehow on profile page but not logged in, redirect or show message
-             window.location.href = '/login.html';
+            jobsListElement.innerHTML = '<p>You have no pending repair jobs at this time.</p>';
         }
     }
 
@@ -98,22 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
             return; // Exit if elements don't exist
         }
 
-        if (isLoggedIn) {
-             jobsListElement.innerHTML = `<h3>All Your Repair Jobs:</h3>`;
-             if (simulatedRepairJobs.length > 0) {
-                jobsListElement.innerHTML += simulatedRepairJobs.map(job => `
-                    <div class="repair-job-item">
-                        <p>Item: <strong>${job.item}</strong></p>
-                        <p>Status: ${job.status}</p>
-                        <p>Estimated Completion/Pickup: ${job.estimated}</p>
-                    </div>
-                `).join('');
-            } else {
-                jobsListElement.innerHTML += '<p>You have no pending or completed repair jobs at this time.</p>';
-            }
+        jobsListElement.innerHTML = `<h3>All Your Repair Jobs:</h3>`;
+        if (simulatedRepairJobs.length > 0) {
+            jobsListElement.innerHTML += simulatedRepairJobs.map(job => `
+                <div class="repair-job-item">
+                    <p>Item: <strong>${job.item}</strong></p>
+                    <p>Status: ${job.status}</p>
+                    <p>Estimated Completion/Pickup: ${job.estimated}</p>
+                </div>
+            `).join('');
         } else {
-             // If not logged in, redirect or show message
-             window.location.href = '/login.html';
+            jobsListElement.innerHTML += '<p>You have no pending or completed repair jobs at this time.</p>';
         }
     }
 
@@ -148,7 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const chatInput = document.getElementById('chat-input');
         const chatWindow = document.getElementById('chat-window');
         const userMessageText = chatInput.value.trim();
-        const userIconUrl = isLoggedIn ? `https://images.websim.com/avatar/${simulatedUser.username}` : '/favicon.png'; // Use user avatar if logged in, else default icon
+        // Always use the simulated user's avatar for user messages now
+        const userIconUrl = `https://images.websim.com/avatar/${simulatedUser.username}`;
 
         if (userMessageText === '') {
             return; // Don't send empty messages
@@ -174,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const typingIndicator = document.createElement('div');
         typingIndicator.classList.add('chat-message', 'ai-message', 'typing-indicator');
         // Use tinyLogo.png for the AI icon
-        typingIndicator.innerHTML = `<img src="/FiXerUppers/tinyLogo.png" alt="/FiXer Icon" class="chat-message-icon"><div class="message-content"><p>...</p></div>`;
+        typingIndicator.innerHTML = `<img src="/FiXerUppers/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>...</p></div>`;
         chatWindow.appendChild(typingIndicator);
         chatWindow.scrollTop = chatWindow.scrollHeight;
 
@@ -218,7 +196,7 @@ Do not make up information about specific repairs not listed here or services/pr
                  // Keep the typing indicator removal and error message logic below as well for robustness
                   const errorMessageElement = document.createElement('div');
                   errorMessageElement.classList.add('chat-message', 'ai-message', 'error-message');
-                  errorMessageElement.innerHTML = `<img src="/FiXerUppers/tinyLogo.png" alt="/FiXer Icon" class="chat-message-icon"><div class="message-content"><p>${aiMessageText}</p></div>`;
+                  errorMessageElement.innerHTML = `<img src="/FiXerUppers/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>${aiMessageText}</p></div>`;
                   chatWindow.appendChild(errorMessageElement);
                   chatWindow.scrollTop = chatWindow.scrollHeight;
                    // Add error to history to prevent repeated attempts with the same error
@@ -229,7 +207,7 @@ Do not make up information about specific repairs not listed here or services/pr
                 const aiMessageElement = document.createElement('div');
                 aiMessageElement.classList.add('chat-message', 'ai-message');
                 // Use tinyLogo.png for the AI icon
-                aiMessageElement.innerHTML = `<img src="/FiXerUppers/tinyLogo.png" alt="/FiXer Icon" class="chat-message-icon"><div class="message-content"><p>${aiMessageText}</p></div>`;
+                aiMessageElement.innerHTML = `<img src="/FiXerUppers/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>${aiMessageText}</p></div>`;
                 chatWindow.appendChild(aiMessageElement);
 
                 // Add AI message to history
@@ -250,7 +228,7 @@ Do not make up information about specific repairs not listed here or services/pr
             // Display an error message in the chat
             const errorMessageElement = document.createElement('div');
             errorMessageElement.classList.add('chat-message', 'ai-message', 'error-message');
-             errorMessageElement.innerHTML = `<img src="/FiXerUppers/tinyLogo.png" alt="/FiXer Icon" class="chat-message-icon"><div class="message-content"><p>Sorry, I'm having trouble connecting right now. Please try again later.</p></div>`; // Added icon and wrapped text
+             errorMessageElement.innerHTML = `<img src="/FiXerUppers/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>Sorry, I'm having trouble connecting right now. Please try again later.</p></div>`; // Added icon and wrapped text
             chatWindow.appendChild(errorMessageElement);
             chatWindow.scrollTop = chatWindow.scrollHeight;
              // Add error to history to prevent repeated attempts with the same error
@@ -266,9 +244,9 @@ Do not make up information about specific repairs not listed here or services/pr
         if (loginForm) {
             loginForm.addEventListener('submit', (event) => {
                 event.preventDefault();
-
+                 // Simulated login is now just a confirmation, access is not restricted
                 console.log('Simulating login...');
-                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('isLoggedIn', 'true'); // Keep this for consistency, though it's not strictly needed for access now
 
                 window.location.href = '/';
             });
@@ -277,7 +255,7 @@ Do not make up information about specific repairs not listed here or services/pr
 
     } else if (currentPath === '/profile.html') {
         updateMenu();
-        renderProfile();
+        renderProfile(); // Always render profile with simulated data
     } else if (currentPath === '/appointment.html') {
         updateMenu();
         const appointmentForm = document.getElementById('appointment-form');
@@ -286,7 +264,7 @@ Do not make up information about specific repairs not listed here or services/pr
         }
     } else if (currentPath === '/current-repair-jobs.html') {
          updateMenu(); // Update navbar
-         renderRepairJobsPage(); // Render the job list on this page
+         renderRepairJobsPage(); // Always render the job list on this page
 
          // Setup chatbot event listeners
          const sendButton = document.getElementById('send-button');
