@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiXerUppers - Current Repair Jobs</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "script": "./script.js"
+            }
+        }
+    </script>
+</head>
+<body class="current-repair-jobs-page-body">
+    <nav class="navbar">
+        <a href="/" class="nav-logo-link">
+            <img src="/tinyLogo.png" alt="FiXerUppers Logo" class="nav-logo">
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Stores</a>
+                <div class="dropdown-content">
+                    <a href="/stores.html">Find a Store</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Service</a>
+                <div class="dropdown-content">
+                    <a href="/appointment.html">Make an Appointment</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                    <a href="/phones.html">Phones</a>
+                    <a href="/laptops.html">Laptops</a>
+                    <a href="/desktops.html">Desktops</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <!-- User Menu -->
+            <li class="dropdown user-menu">
+                <a href="#" class="dropbtn user-icon-link">
+                    <img src="/favicon.png" alt="User Menu" class="user-icon">
+                </a>
+                <div class="dropdown-content" id="user-menu-dropdown">
+                    <!-- Content will be updated by script.js -->
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container current-repair-jobs-container">
+        <h2>Your Repair Jobs</h2>
+
+        <div id="repair-jobs-list">
+            <!-- Repair jobs will be loaded here by script.js -->
+        </div>
+    </div>
+
+    <!-- Chatbot Component - Moved outside the main container -->
+    <div class="chatbot-component">
+        <div class="chatbot-header">
+            <img src="/tinyLogo.png" alt="FiXer Icon" class="chatbot-icon">
+            <h3>Chat with FiXer</h3>
+        </div>
+        <div class="chat-window" id="chat-window">
+            <!-- Initial message and subsequent messages will be loaded here -->
+            <div class="chat-message ai-message">
+                <img src="/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon">
+                <div class="message-content"><p>Hello! I'm FiXer, your friendly technician chatbot. How can I help you today with your repair jobs or questions about FiXerUppers?</p></div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 FiXerUppers. Project Author: F1dg3t</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

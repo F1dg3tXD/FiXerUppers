@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiXerUppers - Find a Store</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "script": "./script.js"
+            }
+        }
+    </script>
+</head>
+<body class="stores-page-body">
+    <nav class="navbar">
+        <a href="/" class="nav-logo-link">
+            <img src="/tinyLogo.png" alt="FiXerUppers Logo" class="nav-logo">
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Stores</a>
+                <div class="dropdown-content">
+                    <a href="/stores.html">Find a Store</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Service</a>
+                <div class="dropdown-content">
+                    <a href="/appointment.html">Make an Appointment</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                    <a href="/phones.html">Phones</a>
+                    <a href="/laptops.html">Laptops</a>
+                    <a href="/desktops.html">Desktops</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <!-- User Menu -->
+            <li class="dropdown user-menu">
+                <a href="#" class="dropbtn user-icon-link">
+                    <img src="/favicon.png" alt="User Menu" class="user-icon">
+                </a>
+                <div class="dropdown-content" id="user-menu-dropdown">
+                    <!-- Content will be updated by script.js -->
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container stores-container">
+        <h2>Our Locations</h2>
+
+        <div class="store-location-section">
+            <h3>Brea Mall</h3>
+            <p>1065 Brea Mall, Brea, CA 92821</p>
+            <div class="map-embed-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.0184656013556!2d-117.90169432303102!3d33.810565873239485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d2d5441685d385%3A0x727c71e7a5a6f78f!2s1065%20Brea%20Mall%2C%20Brea%2C%20CA%2092821%2C%20USA!5e0!3m2!1sen!2sus!4v1702571116380!5m2!1sen!2sus"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p><a href="https://www.google.com/maps/dir/?api=1&destination=1065+Brea+Mall,+Brea,+CA+92821" target="_blank" class="directions-link">Get Directions</a></p>
+        </div>
+
+        <div class="store-location-section">
+            <h3>La Palma Ave</h3>
+            <p>3370 E La Palma Ave, Anaheim, CA 92806</p>
+            <div class="map-embed-container">
+                 <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.214454356005!2d-117.84658802302619!3d33.90633407324131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d94f240118f441%3A0x68f25449772f9435!2s3370%20E%20La%20Palma%20Ave%2C%20Anaheim%2C%20CA%2092806%2C%20USA!5e0!3m2!1sen!2sus!4v1702571149543!5m2!1sen!2sus"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p><a href="https://www.google.com/maps/dir/?api=1&destination=3370+E+La+Palma+Ave,+Anaheim,+CA+92806" target="_blank" class="directions-link">Get Directions</a></p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 FiXerUppers. Project Author: F1dg3t</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

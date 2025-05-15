@@ -1,0 +1,662 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 10vh;
+
+    background-image: url('/Store1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    padding-bottom: 470px; 
+}
+
+.hero-spacer {
+    height: 90vh;
+    width: 100%;
+    padding-top: 70px;
+    box-sizing: border-box;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    pointer-events: none;
+    z-index: 1;
+    transition: background-color 0.3s ease-out;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+}
+
+.nav-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-left: 20px;
+    width: calc(100% - 60px);
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.dropdown .dropbtn {
+    padding-right: 20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-links li.user-menu {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.user-icon-link {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-icon {
+    height: 30px;
+    width: auto;
+}
+
+.user-menu .dropdown-content {
+    left: auto;
+    right: 0;
+}
+
+.hero-header-container {
+    position: absolute;
+    top: 20%;
+    right: 50px;
+    transform: none;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.hero-header-container header {
+    margin: 0;
+}
+
+.hero-header-container .header-logo {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 15px;
+    max-height: 100px;
+}
+
+.hero-header-container header p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    text-align: left;
+    position: relative;
+    z-index: 10;
+}
+
+.main-content-container {
+    margin-top: 20px;
+}
+
+.login-page-body,
+.appointment-page-body,
+.product-page-body,
+.profile-page-body,
+.stores-page-body,
+.current-repair-jobs-page-body {
+    background: none;
+    background-color: #f8f8f8;
+}
+
+.login-page-body .hero-spacer,
+.login-page-body .background-overlay,
+.login-page-body .hero-header-container,
+.appointment-page-body .hero-spacer,
+.appointment-page-body .background-overlay,
+.appointment-page-body .hero-header-container,
+.product-page-body .hero-spacer,
+.product-page-body .background-overlay,
+.product-page-body .hero-header-container,
+.profile-page-body .hero-spacer,
+.profile-page-body .background-overlay,
+.profile-page-body .hero-header-container,
+.stores-page-body .hero-spacer,
+.stores-page-body .background-overlay,
+.stores-page-body .hero-header-container,
+.current-repair-jobs-page-body .hero-spacer,
+.current-repair-jobs-page-body .background-overlay,
+.current-repair-jobs-page-body .hero-header-container {
+    display: none;
+}
+
+.login-container,
+.appointment-container,
+.profile-container,
+.stores-container,
+.current-repair-jobs-container {
+    max-width: 800px;
+    margin-top: 100px; 
+    padding: 30px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    z-index: 5; 
+    margin-bottom: 120px; 
+}
+
+.login-container h2,
+.appointment-container h2,
+.profile-container h2,
+.stores-container h2,
+.current-repair-jobs-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.login-button,
+.appointment-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.appointment-button:hover {
+    background-color: #0056b3;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+main p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #888;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    position: relative;
+    z-index: 10; 
+    flex-shrink: 0;
+}
+
+.profile-container {
+    max-width: 600px;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+}
+
+#profile-username {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#repair-jobs-heading {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: left;
+}
+
+#pending-repair-jobs,
+#repair-jobs-list {
+    text-align: left;
+}
+
+.repair-job-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.repair-job-item strong {
+    color: #007bff;
+}
+
+.repair-job-item p {
+    margin: 5px 0 0 0;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.reviews-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.reviews-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.reviews-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.review-item {
+    background-color: #e9f7ff;
+    border: 1px solid #cce7ff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-item p {
+    margin: 0 0 15px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.review-item .reviewer {
+    margin: 0;
+    font-style: normal;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.product-container {
+    margin-top: 100px; 
+}
+
+.manufacturer-section {
+    margin-bottom: 30px;
+}
+
+.manufacturer-section h3 {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.generation-section {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.generation-section h4 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.product-kits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.product-kit-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.product-kit-item h5 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.product-kit-item p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0;
+}
+
+.stores-container {
+    margin-top: 100px; 
+}
+
+.store-location-section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.store-location-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.store-location-section h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.store-location-section p {
+    margin: 5px 0;
+}
+
+.map-embed-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.map-embed-container iframe {
+    width: 100%; 
+    max-width: 600px; 
+    height: 450px;
+    border: 0;
+    border-radius: 8px;
+}
+
+.directions-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.directions-link:hover {
+    text-decoration: underline;
+}
+
+.chatbot-component {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000; 
+}
+
+.chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chatbot-header .chatbot-icon {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+    filter: brightness(0) invert(1); 
+}
+
+.chatbot-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.chat-window {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-message {
+    display: flex;
+    align-items: flex-start; 
+    max-width: 90%;
+}
+
+.chat-message-icon {
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+    object-fit: cover;
+    flex-shrink: 0; 
+    margin-right: 10px;
+    border: 1px solid #eee; 
+}
+
+.ai-message .chat-message-icon {
+     filter: none; 
+}
+
+.user-message {
+    align-self: flex-end; 
+    flex-direction: row-reverse; 
+}
+
+.user-message .chat-message-icon {
+    margin-right: 0;
+    margin-left: 10px; 
+}
+
+.message-content {
+    padding: 8px 12px;
+    border-radius: 8px;
+    word-break: break-word; 
+}
+
+.ai-message .message-content {
+    background-color: #e9e9eb;
+    color: #333;
+}
+
+.user-message .message-content {
+    background-color: #007bff;
+    color: white;
+}
+
+.chat-message p {
+    margin: 0;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+}
+
+.chat-input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.chat-input-area button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-input-area button:hover {
+    background-color: #0056b3;
+}
+
+.typing-indicator {
+    font-style: italic;
+    color: #888;
+    align-self: flex-start; 
+}
+
+.typing-indicator .message-content {
+    background-color: #e9e9eb;
+    color: #888;
+}
+
+.current-repair-jobs-page-body {
+     padding-bottom: 470px; 
+}

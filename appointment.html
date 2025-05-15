@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiXerUppers - Make an Appointment</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "script": "./script.js"
+            }
+        }
+    </script>
+</head>
+<body class="appointment-page-body">
+    <nav class="navbar">
+        <a href="/" class="nav-logo-link">
+            <img src="/tinyLogo.png" alt="FiXerUppers Logo" class="nav-logo">
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Stores</a>
+                <div class="dropdown-content">
+                    <a href="/stores.html">Find a Store</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Service</a>
+                <div class="dropdown-content">
+                    <a href="/appointment.html">Make an Appointment</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                    <a href="/phones.html">Phones</a>
+                    <a href="/laptops.html">Laptops</a>
+                    <a href="/desktops.html">Desktops</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <!-- User Menu -->
+            <li class="dropdown user-menu">
+                <a href="#" class="dropbtn user-icon-link">
+                    <img src="/favicon.png" alt="User Menu" class="user-icon">
+                </a>
+                <div class="dropdown-content" id="user-menu-dropdown">
+                    <!-- Content will be updated by script.js -->
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container appointment-container">
+        <h2>Make an Appointment</h2>
+        <form id="appointment-form">
+            <div class="form-group">
+                <label for="store-location">Choose a Store Location:</label>
+                <select id="store-location" name="store-location" required>
+                    <option value="">--Select a Store--</option>
+                    <option value="brea-mall">1065 Brea Mall, Brea, CA 92821</option>
+                    <option value="la-palma">3370 E La Palma Ave, Anaheim, CA 92806</option>
+                    <!-- Add more locations here -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="device-type">Type of Device:</label>
+                <select id="device-type" name="device-type" required>
+                    <option value="">--Select Device Type--</option>
+                    <option value="phone">Phone</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="desktop">Desktop</option>
+                    <!-- Add more device types here -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="repair-type">Type of Repair:</label>
+                <select id="repair-type" name="repair-type" required>
+                    <option value="">--Select Repair Type--</option>
+                    <option value="screen">Screen Repair</option>
+                    <option value="hardware">Hardware Issue</option>
+                    <option value="battery">Battery Replacement</option>
+                    <option value="software">Software/OS Issue</option>
+                    <option value="data-recovery">Data Recovery</option>
+                    <option value="other">Other</option>
+                    <!-- Add more repair types here -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="details">Additional Details (Optional):</label>
+                <textarea id="details" name="details" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="appointment-button">Request Appointment</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 FiXerUppers. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

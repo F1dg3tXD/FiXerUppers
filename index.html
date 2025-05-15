@@ -1,0 +1,142 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>FiXerUppers</title>
+    <link rel="stylesheet" href="style.css">
+    <meta content="FiXerUppers" property="og:title" />
+    <meta content="Your one stop shop for repairs." property="og:description" />
+    <meta content="https://f1dg3txd.github.io/FiXerUppers" property="og:url" />
+    <meta content="https://f1dg3txd.github.io/FiXerUppers/1024w.png" property="og:image" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://f1dg3txd.github.io/FiXerUppers/1024w.png">
+    <meta content="#00FFFF" data-react-helmet="true" name="theme-color" />
+    <script type="importmap">
+        {
+            "imports": {
+                "script": "./script.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-logo-link">
+            <img src="/tinyLogo.png" alt="FiXerUppers Logo" class="nav-logo">
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Stores</a>
+                <div class="dropdown-content">
+                    <a href="/stores.html">Find a Store</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Service</a>
+                <div class="dropdown-content">
+                    <a href="/appointment.html">Make an Appointment</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                    <a href="/phones.html">Phones</a>
+                    <a href="/laptops.html">Laptops</a>
+                    <a href="/desktops.html">Desktops</a>
+                    <!-- Add more options here if needed -->
+                </div>
+            </li>
+            <!-- User Menu -->
+            <li class="dropdown user-menu">
+                <a href="#" class="dropbtn user-icon-link">
+                    <img src="/favicon.png" alt="User Menu" class="user-icon">
+                </a>
+                <div class="dropdown-content" id="user-menu-dropdown">
+                    <!-- Content will be updated by script.js -->
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- This spacer pushes the main content down -->
+    <div class="hero-spacer"></div>
+
+    <!-- This overlay will fade to white on scroll -->
+    <div class="background-overlay"></div>
+
+    <!-- New container for the header content -->
+    <div class="hero-header-container">
+        <header>
+            <img src="/LOGOTYPE.svg" alt="FiXerUppers" class="header-logo">
+            <p>Your Go-To Repair Shop</p>
+        </header>
+    </div>
+
+    <div class="container main-content-container">
+        <main>
+            <p>We fix just about anything! From electronics to household appliances, our skilled technicians are here to help get your items back in working order.</p>
+            <p>Reliable service, affordable prices, and a commitment to quality.</p>
+        </main>
+    </div>
+
+    <!-- New section for user reviews -->
+    <section class="container reviews-container">
+        <h2>What Our Customers Say</h2>
+        <div class="reviews-list">
+            <div class="review-item">
+                <p>"FiXerUppers saved my laptop! Quick, professional, and reasonably priced."</p>
+                <p class="reviewer">- Happy Customer</p>
+            </div>
+            <div class="review-item">
+                <p>"Excellent service. They fixed my phone screen in no time."</p>
+                <p class="reviewer">- Satisfied User</p>
+            </div>
+             <div class="review-item">
+                <p>"Friendly staff and great communication throughout the repair process."</p>
+                <p class="reviewer">- Loyal Patron</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New section for user reviews -->
+    <section class="container repair-kits-container">
+        <h2>DIY Repair Kits</h2>
+        <p>Looking to tackle a repair yourself? We offer a range of high-quality repair kits for common issues with phones, computers, and more. Each kit includes all necessary tools and parts, plus step-by-step guides.</p>
+
+        <div class="kits-list">
+            <div class="kit-item">
+                <h3>Smartphone Screen Replacement Kit</h3>
+                <p>Replace cracked or damaged screens on popular smartphone models. Includes premium screen, tools, adhesive, and instructions.</p>
+                <p>Compatibility: iPhone (select models), Samsung Galaxy (select models)</p>
+            </div>
+            <div class="kit-item">
+                <h3>Laptop Battery Replacement Kit</h3>
+                <p>Restore your laptop's battery life. Kit provides a new high-capacity battery, specific screwdrivers, and a safe disposal guide.</p>
+                <p>Compatibility: Dell, HP, Lenovo, Apple MacBook (select models)</p>
+            </div>
+             <div class="kit-item">
+                <h3>Computer Fan Cleaning Kit</h3>
+                <p>Prevent overheating and extend component lifespan. Includes compressed air, anti-static brush, thermal paste, and guides for various computer types.</p>
+                <p>For: Desktops, Laptops</p>
+            </div>
+            <div class="kit-item">
+                <h3>Universal Electronic Repair Toolset</h3>
+                <p>A comprehensive kit with precision tools for various small electronic repairs. Ideal for hobbyists and professionals.</p>
+                <p>Includes: Magnetic screwdriver set, spudgers, tweezers, anti-static wrist strap, opening tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 FiXerUppers. Project Author: F1dg3t</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
