@@ -24,18 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
         userMenuDropdown.innerHTML = ''; // Clear current content
         if (isLoggedIn) {
             userMenuDropdown.innerHTML = `
-                <a href="/profile.html">Profile</a>
-                <a href="/current-repair-jobs.html">Current Repair Jobs</a>
-                <a href="/appointment.html">Make an Appointment</a>
+                <a href="FiXerUppers/profile.html">Profile</a>
+                <a href="FiXerUppers/current-repair-jobs.html">Current Repair Jobs</a>
+                <a href="FiXerUppers/appointment.html">Make an Appointment</a>
                 <a href="#" id="logout-link">Logout</a>
             `;
             document.getElementById('logout-link').addEventListener('click', handleLogout);
         } else {
             userMenuDropdown.innerHTML = `
-                <a href="/login.html">Login</a>
+                <a href="FiXerUppers/login.html">Login</a>
                 <a href="#" class="disabled-link">Profile</a>
                 <a href="#" class="disabled-link">Current Repair Jobs</a>
-                <a href="/appointment.html">Make an Appointment</a>
+                <a href="FiXerUppers/appointment.html">Make an Appointment</a>
             `;
             userMenuDropdown.querySelectorAll('.disabled-link').forEach(link => {
                  link.style.opacity = '0.5';
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const typingIndicator = document.createElement('div');
         typingIndicator.classList.add('chat-message', 'ai-message', 'typing-indicator');
         // Use tinyLogo.png for the AI icon
-        typingIndicator.innerHTML = `<img src="/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>...</p></div>`;
+        typingIndicator.innerHTML = `<img src="FiXerUppers/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>...</p></div>`;
         chatWindow.appendChild(typingIndicator);
         chatWindow.scrollTop = chatWindow.scrollHeight;
 
@@ -218,7 +218,7 @@ Do not make up information about specific repairs not listed here or services/pr
                  // Keep the typing indicator removal and error message logic below as well for robustness
                   const errorMessageElement = document.createElement('div');
                   errorMessageElement.classList.add('chat-message', 'ai-message', 'error-message');
-                  errorMessageElement.innerHTML = `<img src="/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>${aiMessageText}</p></div>`;
+                  errorMessageElement.innerHTML = `<img src="FiXerUppers/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>${aiMessageText}</p></div>`;
                   chatWindow.appendChild(errorMessageElement);
                   chatWindow.scrollTop = chatWindow.scrollHeight;
                    // Add error to history to prevent repeated attempts with the same error
@@ -229,7 +229,7 @@ Do not make up information about specific repairs not listed here or services/pr
                 const aiMessageElement = document.createElement('div');
                 aiMessageElement.classList.add('chat-message', 'ai-message');
                 // Use tinyLogo.png for the AI icon
-                aiMessageElement.innerHTML = `<img src="/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>${aiMessageText}</p></div>`;
+                aiMessageElement.innerHTML = `<img src="FiXerUppers/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>${aiMessageText}</p></div>`;
                 chatWindow.appendChild(aiMessageElement);
 
                 // Add AI message to history
@@ -250,7 +250,7 @@ Do not make up information about specific repairs not listed here or services/pr
             // Display an error message in the chat
             const errorMessageElement = document.createElement('div');
             errorMessageElement.classList.add('chat-message', 'ai-message', 'error-message');
-             errorMessageElement.innerHTML = `<img src="/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>Sorry, I'm having trouble connecting right now. Please try again later.</p></div>`; // Added icon and wrapped text
+             errorMessageElement.innerHTML = `<img src="FiXerUppers/tinyLogo.png" alt="FiXer Icon" class="chat-message-icon"><div class="message-content"><p>Sorry, I'm having trouble connecting right now. Please try again later.</p></div>`; // Added icon and wrapped text
             chatWindow.appendChild(errorMessageElement);
             chatWindow.scrollTop = chatWindow.scrollHeight;
              // Add error to history to prevent repeated attempts with the same error
